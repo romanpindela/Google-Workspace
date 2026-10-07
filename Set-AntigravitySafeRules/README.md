@@ -20,6 +20,18 @@ The script applies the **Principle of Least Privilege**:
 
 ---
 
+## Visual Previews & Screenshots
+
+| Default Guard Rails & Help Screen (`.\Set-AntigravitySafeRules.ps1`) |
+| :---: |
+| ![Default Run](assets/Standard_run.jpg) |
+
+| Applying Security Rules to Targets (`.\Set-AntigravitySafeRules.ps1 -Apply -Target All`) |
+| :---: |
+| ![Applying Rules](assets/Setting_rules.jpg) |
+
+---
+
 ## Architectural Highlights
 
 * **Multi-Runtime JSON Engine:** Seamlessly handles both Windows PowerShell 5.1 and PowerShell Core 7+. Uses recursive object mapping and safely strips VS Code JSON with Comments (`JSONC`), preventing parse failures or configuration loss.
@@ -119,6 +131,8 @@ Running the script without parameters displays the built-in help guide and exits
 .\Set-AntigravitySafeRules.ps1 -Help
 ```
 
+![Default Run Console Banner](assets/Standard_run.jpg)
+
 ### 2. Standard Safe Deployment
 Auto-detects active IDE configurations (Antigravity, Cursor, or VS Code) and applies the balanced policy:
 ```powershell
@@ -136,6 +150,8 @@ Audits and updates every discovered editor installation across the workstation:
 ```powershell
 .\Set-AntigravitySafeRules.ps1 -Apply -Target All
 ```
+
+![Applying Security Policy to Targets](assets/Setting_rules.jpg)
 
 ### 5. Dry-Run / Simulation Mode (`-WhatIf`)
 Audits what files would be modified and where backups would be generated without writing to disk:
